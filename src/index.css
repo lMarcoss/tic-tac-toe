@@ -48,10 +48,14 @@ code {
 }
 
 .game {
-  display: flex;
   flex-direction: row;
 }
 
 .game-info {
   margin-left: 20px;
+}
+
+.game-board .game-restart{
+  display: flex;
+  flex-direction: row;
 }
