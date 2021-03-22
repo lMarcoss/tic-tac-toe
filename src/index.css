@@ -28,15 +28,15 @@ code {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 44px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 74px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 74px;
 }
 
 .square:focus {
@@ -55,7 +55,16 @@ code {
   margin-left: 20px;
 }
 
-.game-board .game-restart{
+.game-board{
   display: flex;
   flex-direction: row;
+}
+
+.game-restart{
+  margin-top: 15px;
+}
+
+.button-restart{
+  width: 100%;
+  height: 40px;
 }

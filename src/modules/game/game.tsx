@@ -47,7 +47,7 @@ const Game = () => {
 				<Board squares={squares} onClick={(index) => handleClick(index)} status={status}/>
 			</div>
 			<div className="game-restart">
-				<CustomButton class={""} label="Reiniciar" onClick={() => {
+				<CustomButton class={"button-restart"} label="Reiniciar" onClick={() => {
 					gameRestart()
 				}}/>
 			</div>
