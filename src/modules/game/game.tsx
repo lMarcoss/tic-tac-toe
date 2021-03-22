@@ -9,6 +9,7 @@ const Game = () => {
 
 	const [xIsNext, setXIsNext] = useState<boolean>(true);
 
+
 	const winner = calculateWinner(squares);
 	const gameOver = validateEndGame(squares);
 	let status;
@@ -40,6 +41,7 @@ const Game = () => {
 
 	const gameRestart = () => {
 		setSquares(Array(9).fill(''));
+		setXIsNext(true)
 	}
 
 	return (
@@ -48,7 +50,7 @@ const Game = () => {
 				<Board squares={squares} winner={winner} onClick={(index) => handleClick(index)} status={status}/>
 			</div>
 			<div className="game-restart">
-				<CustomButton class={`button-restart ${!!winner || gameOver ? "bold" : ""}`} label="Reiniciar"
+				<CustomButton class={`button-restart ${!!winner.winner || gameOver ? "bold" : ""}`} label="Reiniciar"
 				              onClick={() => {
 					              gameRestart()
 				              }}/>
