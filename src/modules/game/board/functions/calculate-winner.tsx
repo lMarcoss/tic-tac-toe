@@ -1,4 +1,6 @@
-export function calculateWinner(squares: string[]):string {
+import {WinnerProps} from "../board-props";
+
+export function calculateWinner(squares: string[]): WinnerProps {
 	const lines = [
 		[0, 1, 2],
 		[3, 4, 5],
@@ -12,8 +14,8 @@ export function calculateWinner(squares: string[]):string {
 	for (let i = 0; i < lines.length; i++) {
 		const [a, b, c] = lines[i];
 		if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-			return squares[a];
+			return {line: lines[i], winner: squares[a]};
 		}
 	}
-	return '';
+	return {line: [], winner: ''};
 }

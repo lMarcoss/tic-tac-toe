@@ -1,70 +1,81 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 
-
 .board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+    clear: both;
+    content: "";
+    display: table;
 }
 
 .status {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 44px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 74px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 74px;
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 74px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 74px;
 }
 
 .square:focus {
-  outline: none;
+    outline: none;
 }
 
 .kbd-navigation .square:focus {
-  background: #ddd;
+    background: #ddd;
 }
 
 .game {
-  flex-direction: row;
+    flex-direction: row;
 }
 
 .game-info {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
-.game-board{
-  display: flex;
-  flex-direction: row;
+.game-board {
+    display: flex;
+    flex-direction: row;
 }
 
-.game-restart{
-  margin-top: 15px;
+.game-restart {
+    margin-top: 15px;
 }
 
-.button-restart{
-  width: 100%;
-  height: 40px;
+.button-restart {
+    width: 100%;
+    height: 40px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.winner{
+    color: #008000;
+}
+
+.game-over {
+    color: #ff0000;
 }
