@@ -52,28 +52,6 @@ export const Usuarios = ()=>{
 		}
 	]);
 
-	const [name, setName] = useState("");
-	const [url, setUrl] = useState("");
-
-	useEffect(()=>{
-		/*const fetchData = async () => {
-			const data = await SearchApi.searchData();
-			setUsuarios(data.results);
-		};
-
-		fetchData();*/
-	}, []);
-
-	const handleChangePage = (event: unknown, newPage: number)=>{
-		setPage(newPage);
-	};
-
-	const handleChangeRowsPerPage = (
-		event: React.ChangeEvent<HTMLInputElement>
-	)=>{
-		setRowsPerPage(+event.target.value);
-		setPage(0);
-	};
 
 	const [showModal, setShowModal] = useState(false);
 	const [userEdit, setUserEdit] = useState<Usuario>({
@@ -95,12 +73,7 @@ export const Usuarios = ()=>{
 	const handleCloseModal = ()=>{
 		//console.log(user);
 		setShowModal(false);
-	};
-
-	const handleSubmit = ()=>{
-		//console.log(user);
-		setShowModal(false);
-	};
+	}
 
 
 	return (

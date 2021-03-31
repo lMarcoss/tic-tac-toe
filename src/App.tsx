@@ -1,30 +1,39 @@
 import React from 'react';
 import './App.css';
-import Game from "modules/game/game";
-import {Usuarios} from "modules/usuarios/Usuarios";
-import {Route} from "wouter";
-import {Header} from "components/template/header/Header";
-import {Footer} from "./components/template/footer/Footer";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import {Header} from "./components/template/header/Header";
+import {DrawerTemplate} from "./components/template/left-menu/DrawerTemplate";
+import {drawerWidth, useStyles} from "./components/template/template-style/StyleTemplate";
+import {MainContent} from "./components/template/main-conten/MainContent";
+
 
 function App() {
+
+	const classes = useStyles();
+
+	const [open, setOpen] = React.useState(false);
+
+	const handleDrawerClose = ()=>{
+		setOpen(false);
+	};
+
+	const handleDrawerOpen = ()=>{
+		setOpen(true);
+	};
+
 	return (
-		<div className="App">
-			{/*<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo"/>
-				<Game/>
-			</header>*/}
+		<div className={classes.root}>
+			<CssBaseline/>
+
+			<DrawerTemplate open={open} classes={classes} handleDrawerClose={handleDrawerClose}/>
+
+			<Header open={open}
+			        handleDrawerOpen={handleDrawerOpen}
+			        drawerWidth={drawerWidth}/>
+
+			<MainContent open={open}/>
 
 
-			{/*<Usuarios/>*/}
-
-			<Header/>
-
-
-			<Route component={Usuarios} path="/usuarios"/>
-			<Route component={Game} path="/juego"/>
-
-
-			<Footer />
 		</div>
 	);
 }
