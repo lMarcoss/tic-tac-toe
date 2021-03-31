@@ -1,8 +1,10 @@
 import React from 'react';
-import logo from './logo.png';
 import './App.css';
-import Game from "./modules/game/game";
-import {Usuarios} from "./modules/usuarios/Usuarios";
+import Game from "modules/game/game";
+import {Usuarios} from "modules/usuarios/Usuarios";
+import {Route} from "wouter";
+import {Header} from "components/template/header/Header";
+import {Footer} from "./components/template/footer/Footer";
 
 function App() {
 	return (
@@ -13,8 +15,16 @@ function App() {
 			</header>*/}
 
 
-			<Usuarios/>
+			{/*<Usuarios/>*/}
 
+			<Header/>
+
+
+			<Route component={Usuarios} path="/usuarios"/>
+			<Route component={Game} path="/juego"/>
+
+
+			<Footer />
 		</div>
 	);
 }

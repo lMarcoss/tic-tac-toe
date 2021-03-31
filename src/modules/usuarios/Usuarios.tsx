@@ -4,8 +4,7 @@ import {CustomTable} from "../../components/custom-table/CustomTable";
 import {Usuario} from "./definition-user-data/Usuario";
 import {UserColumn} from "./definition-user-data/UserColum";
 import {Modal} from "../../components/modal/Modal";
-import {AddEditUser} from "./AddEditUser";
-import {EditUser} from "./EditUser";
+import {EditUser} from "./user-form/EditUser";
 
 const useStyles = makeStyles({
 	root: {

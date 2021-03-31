@@ -5,6 +5,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -78,4 +79,15 @@ code {
 
 .game-over {
     color: #ff0000;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.App{
+    flex: 1 0 auto;
+    padding: 0px;
 }

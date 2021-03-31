@@ -3,8 +3,9 @@ import React, {useState} from "react";
 import CustomButton from "components/custom-button/custom-button";
 import {calculateWinner} from "./board/functions/calculate-winner";
 import {validateEndGame} from "./board/functions/validate-end-game";
+import logo from '../../logo.png';
 
-const Game = () => {
+const Game = ()=>{
 	const [squares, setSquares] = useState<string[]>(Array(9).fill(''));
 
 	const [xIsNext, setXIsNext] = useState<boolean>(true);
@@ -13,7 +14,7 @@ const Game = () => {
 	const winner = calculateWinner(squares);
 	const gameOver = validateEndGame(squares);
 	let status;
-	if (winner.line.length>0) {
+	if (winner.line.length > 0) {
 		status = 'Ganador: ' + winner.winner;
 	} else {
 		if (gameOver) {
@@ -24,12 +25,12 @@ const Game = () => {
 
 	}
 
-	const handleClick = (index: number) => {
+	const handleClick = (index: number)=>{
 		let newSquares = squares.slice();
 
 		const winnerProps = calculateWinner(squares);
 		// si hay jugador o un cuadrado ya ha sido llenado
-		if (winnerProps.line.length >0 || squares[index]) {
+		if (winnerProps.line.length > 0 || squares[index]) {
 			return;
 		}
 
@@ -39,23 +40,30 @@ const Game = () => {
 		setXIsNext(!xIsNext)
 	}
 
-	const gameRestart = () => {
+	const gameRestart = ()=>{
 		setSquares(Array(9).fill(''));
 		setXIsNext(true)
 	}
 
 	return (
-		<div className="game">
-			<div className="game-board">
-				<Board squares={squares} winner={winner} onClick={(index) => handleClick(index)} status={status}/>
+
+		<header className="App-header">
+			<img src={logo} className="App-logo" alt="logo"/>
+
+			<div className="game">
+				<div className="game-board">
+					<Board squares={squares} winner={winner} onClick={(index)=>handleClick(index)}
+					       status={status}/>
+				</div>
+				<div className="game-restart">
+					<CustomButton class={`button-restart ${!!winner.winner || gameOver ? "bold" : ""}`}
+					              label="Reiniciar"
+					              onClick={()=>{
+						              gameRestart()
+					              }}/>
+				</div>
 			</div>
-			<div className="game-restart">
-				<CustomButton class={`button-restart ${!!winner.winner || gameOver ? "bold" : ""}`} label="Reiniciar"
-				              onClick={() => {
-					              gameRestart()
-				              }}/>
-			</div>
-		</div>
+		</header>
 	)
 }
 
