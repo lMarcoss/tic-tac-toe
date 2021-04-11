@@ -1,6 +1,7 @@
 import React from 'react';
 import PeopleIcon from '@material-ui/icons/People';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
+import SchoolIcon from '@material-ui/icons/School';
 import {Link} from "wouter";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -19,6 +20,12 @@ export const mainListItems = [
 		path: '/game',
 		label: 'Game',
 		icon: (<SportsEsportsIcon/>)
+	},
+	{
+		id: 'curso-react',
+		path: '/curso-react',
+		label: 'Curso React',
+		icon: (<SchoolIcon/>)
 	}
 ]
 

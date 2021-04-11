@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import {Header} from "./components/template/header/Header";
 import {DrawerTemplate} from "./components/template/left-menu/DrawerTemplate";
 import {drawerWidth, useStyles} from "./components/template/template-style/StyleTemplate";
-import {MainContent} from "./components/template/main-conten/MainContent";
+import {MainRoute} from "./components/template/main-route/MainRoute";
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
 			        handleDrawerOpen={handleDrawerOpen}
 			        drawerWidth={drawerWidth}/>
 
-			<MainContent open={open}/>
+			<MainRoute open={open}/>
 
 
 		</div>
